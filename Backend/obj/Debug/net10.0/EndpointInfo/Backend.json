@@ -94,6 +94,95 @@
         }
       }
     },
+    "/Order/GetAllOrderedItems": {
+      "get": {
+        "tags": [
+          "OrderedItem"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Order/GetAnOrdered_Item/{id}": {
+      "get": {
+        "tags": [
+          "OrderedItem"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Order/AddOrdered_Item": {
+      "post": {
+        "tags": [
+          "OrderedItem"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddNewOrdereItemDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddNewOrdereItemDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddNewOrdereItemDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Order/DeleteOrderedItem/{id}": {
+      "delete": {
+        "tags": [
+          "OrderedItem"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/products/GetAllProducts": {
       "get": {
         "tags": [
@@ -277,6 +366,36 @@
         },
         "additionalProperties": false
       },
+      "AddNewOrdereItemDTO": {
+        "type": "object",
+        "properties": {
+          "order_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "product_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "product_name": {
+            "type": "string",
+            "nullable": true
+          },
+          "size": {
+            "type": "string",
+            "nullable": true
+          },
+          "quantity": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "unit_price": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
       "AddNewUserDTO": {
         "type": "object",
         "properties": {
@@ -326,6 +445,9 @@
   "tags": [
     {
       "name": "Order"
+    },
+    {
+      "name": "OrderedItem"
     },
     {
       "name": "Product"

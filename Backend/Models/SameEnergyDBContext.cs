@@ -13,7 +13,7 @@ namespace Backend.Models
         public DbSet<ProductM> Products { get; set; }
         public DbSet<UserM> Users { get; set; }
         public DbSet<OrderM>Orders { get; set; }
-        public DbSet<OrderedItemM>Ordered_Items { get; set; }
+        public DbSet<OrderedItemM>Order_Items { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseMySQL("server=localhost;user=root;password=;database=sameenergy");

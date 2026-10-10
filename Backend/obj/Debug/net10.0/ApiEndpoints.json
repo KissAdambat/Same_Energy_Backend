@@ -16,9 +16,41 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Backend.Controllers.OrderedItemController",
+    "Method": "AddOrdered_Item",
+    "RelativePath": "Order/AddOrdered_Item",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Backend.Models.DTOs.AddNewOrdereItemDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Backend.Controllers.OrderController",
     "Method": "DeleteOrder",
     "RelativePath": "Order/DeleteOrder/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend.Controllers.OrderedItemController",
+    "Method": "DeleteOrder",
+    "RelativePath": "Order/DeleteOrderedItem/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -42,9 +74,35 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Backend.Controllers.OrderedItemController",
+    "Method": "GetAllOrders",
+    "RelativePath": "Order/GetAllOrderedItems",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Backend.Controllers.OrderController",
     "Method": "GetAnOrder",
     "RelativePath": "Order/GetAnOrder/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend.Controllers.OrderedItemController",
+    "Method": "GetAnOrdered_Item",
+    "RelativePath": "Order/GetAnOrdered_Item/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
