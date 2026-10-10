@@ -1,5 +1,63 @@
 [
   {
+    "ContainingType": "Backend.Controllers.OrderController",
+    "Method": "AddOrder",
+    "RelativePath": "Order/AddOrder",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Backend.Models.DTOs.AddNewOrderDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend.Controllers.OrderController",
+    "Method": "DeleteOrder",
+    "RelativePath": "Order/DeleteOrder/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend.Controllers.OrderController",
+    "Method": "GetAllOrders",
+    "RelativePath": "Order/GetAllOrder",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Backend.Controllers.OrderController",
+    "Method": "GetAnOrder",
+    "RelativePath": "Order/GetAnOrder/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Backend.Controllers.ProductController",
     "Method": "GetAllProducts",
     "RelativePath": "products/GetAllProducts",
@@ -28,7 +86,7 @@
   {
     "ContainingType": "Backend.Controllers.UserController",
     "Method": "AddUser",
-    "RelativePath": "user/AddUser",
+    "RelativePath": "User/AddUser",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -44,7 +102,7 @@
   {
     "ContainingType": "Backend.Controllers.UserController",
     "Method": "DeleteUser",
-    "RelativePath": "user/DeleteUser/{id}",
+    "RelativePath": "User/DeleteUser/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -60,7 +118,7 @@
   {
     "ContainingType": "Backend.Controllers.UserController",
     "Method": "GetAllUsers",
-    "RelativePath": "user/GetAllUsers",
+    "RelativePath": "User/GetAllUsers",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -70,7 +128,7 @@
   {
     "ContainingType": "Backend.Controllers.UserController",
     "Method": "GetAUser",
-    "RelativePath": "user/GetAUser/{id}",
+    "RelativePath": "User/GetAUser/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -86,7 +144,7 @@
   {
     "ContainingType": "Backend.Controllers.UserController",
     "Method": "UpdateUser",
-    "RelativePath": "user/UpdateUser/{id}",
+    "RelativePath": "User/UpdateUser/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,

@@ -5,6 +5,95 @@
     "version": "1.0"
   },
   "paths": {
+    "/Order/GetAllOrder": {
+      "get": {
+        "tags": [
+          "Order"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Order/GetAnOrder/{id}": {
+      "get": {
+        "tags": [
+          "Order"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Order/AddOrder": {
+      "post": {
+        "tags": [
+          "Order"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddNewOrderDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddNewOrderDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddNewOrderDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Order/DeleteOrder/{id}": {
+      "delete": {
+        "tags": [
+          "Order"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/products/GetAllProducts": {
       "get": {
         "tags": [
@@ -40,7 +129,7 @@
         }
       }
     },
-    "/user/GetAllUsers": {
+    "/User/GetAllUsers": {
       "get": {
         "tags": [
           "User"
@@ -52,7 +141,7 @@
         }
       }
     },
-    "/user/GetAUser/{id}": {
+    "/User/GetAUser/{id}": {
       "get": {
         "tags": [
           "User"
@@ -75,7 +164,7 @@
         }
       }
     },
-    "/user/AddUser": {
+    "/User/AddUser": {
       "post": {
         "tags": [
           "User"
@@ -106,7 +195,7 @@
         }
       }
     },
-    "/user/UpdateUser/{id}": {
+    "/User/UpdateUser/{id}": {
       "put": {
         "tags": [
           "User"
@@ -148,7 +237,7 @@
         }
       }
     },
-    "/user/DeleteUser/{id}": {
+    "/User/DeleteUser/{id}": {
       "delete": {
         "tags": [
           "User"
@@ -174,6 +263,20 @@
   },
   "components": {
     "schemas": {
+      "AddNewOrderDTO": {
+        "type": "object",
+        "properties": {
+          "user_id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "total_price": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
       "AddNewUserDTO": {
         "type": "object",
         "properties": {
@@ -221,6 +324,9 @@
     }
   },
   "tags": [
+    {
+      "name": "Order"
+    },
     {
       "name": "Product"
     },
