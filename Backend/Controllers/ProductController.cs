@@ -16,5 +16,16 @@ namespace Backend.Controllers
             return new { message = "Sikeres lekérdezés", data = products };
         }
 
+        [HttpGet("GetAProduct/{id}")]
+        public object GetAProduct(int id)
+        {
+            var existingProduct = Context.Products.FirstOrDefault(o => o.id == id);
+            if (existingProduct != null)
+            {
+                return existingProduct;
+            }
+            return NotFound(new { message = "Nem található a megadott product" });
+        }
+
     }
 }
