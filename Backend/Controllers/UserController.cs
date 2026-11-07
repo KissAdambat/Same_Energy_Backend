@@ -18,10 +18,10 @@ namespace Backend.Controllers
             return new { message = "Sikeres lekérdezés", data = users };
         }
 
-        [HttpGet("GetAUser/{id}")]
-        public object GetAUser([FromRoute] int id)
+        [HttpGet("GetAUser/{email}")]
+        public object GetAUser([FromRoute] string email,[FromQuery] string password)
         {
-            var existingUser = Context.Users.FirstOrDefault(u => u.id == id);
+            var existingUser = Context.Users.FirstOrDefault(u => u.email == email && u.password == password);
             if (existingUser != null)
             {
                 return existingUser;

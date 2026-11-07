@@ -13,7 +13,7 @@ namespace Backend.Controllers
         public object GetAllProducts()
         {
             var products = Context.Products.ToList();
-            return new { message = "Sikeres lekérdezés", data = products };
+            return products ;
         }
 
         [HttpGet("GetAProduct/{id}")]
